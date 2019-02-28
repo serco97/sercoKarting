@@ -1,0 +1,295 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition-->
+
+    <record model="ir.ui.view" id="serco_karting.empleado">
+      <field name="name">Listado de empleado</field>
+      <field name="model">serco_karting.empleado</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="edad"/>
+          <field name="puesto"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.puesto">
+      <field name="name">Listado de puestos</field>
+      <field name="model">serco_karting.puesto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="descripcion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.vehiculos">
+      <field name="name">Listado de vehiculos</field>
+      <field name="model">serco_karting.vehiculos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="identificador"/>
+          <field name="modelo"/>
+          <field name="ruedas"/>
+          <field name="gasolina"/>
+          <field name="aceite"/>
+          <field name="empleado"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.estados">
+      <field name="model">serco_karting.estados</field>
+      <field name="name">Gestion de estados</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="identificador"/>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.piezas">
+      <field name="model">serco_karting.piezas</field>
+      <field name="name">Piezas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="identificador"/>
+          <field name="estado"/>
+          <field name="cantidad"/>
+          <field name="proveedor"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.pista">
+      <field name="model">serco_karting.pista</field>
+      <field name="name">Pista</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="empleado"/>
+          <field name="fecha"/>
+          <field name="estado"/>
+          <field name="descripcion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id ="serco_karting.proveedor">
+      <field name="model">serco_karting.proveedor</field>
+      <field name="name">Proveedor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="identificador"/>
+          <field name="email"/>
+          <field name="direccion"/>
+          <field name="fax"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.tiempo_carreras">
+      <field name="model">serco_karting.tiempo_carreras</field>
+      <field name="name">Tiempos de las carreras</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="cliente2"/>
+          <field name="tiempo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.bar">
+      <field name="model">serco_karting.bar</field>
+      <field name="name">Bar</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="empleado"/>
+          <field name="fecha"/>
+          <field name="productosBar"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.productos_bar">
+      <field name="model">serco_karting.productos_bar</field>
+      <field name="name">Productos del bar</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="precio"/>
+          <field name="proveedor"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.competiciones">
+      <field name="model">serco_karting.competiciones</field>
+      <field name="name">Compteciones</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="fecha"/>
+          <field name="participantes"/>
+          <field name="premio"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.clientes">
+      <field name="model">serco_karting.clientes</field>
+      <field name="name">Clientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="identificador"/>
+          <field name="nombre"/>
+          <field name="telefono"/>
+          <field name="email"/>
+          <field name="premios"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="serco_karting.premios">
+      <field name="model">serco_karting.premios</field>
+      <field name="name">Premios</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="descripcion"/>
+        </tree>
+      </field>
+    </record>
+    <!-- ACTION WINDOWS  -->
+
+    <record model="ir.actions.act_window" id="serco_karting.empleado_action_window">
+      <field name="name">Gestión de empleados</field>
+      <field name="res_model">serco_karting.empleado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.puesto_action_window">
+        <field name="name">Gestión de puestos</field>
+        <field name="res_model">serco_karting.puesto</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.vehiculos_action_window">
+        <field name="name">Gestión de vehiculos</field>
+        <field name="res_model">serco_karting.vehiculos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.estados_action_window">
+        <field name="name">Estado de las piezas</field>
+        <field name="res_model">serco_karting.estados</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.piezas_action_window">
+      <field name="name">Piezas</field>
+      <field name="res_model">serco_karting.piezas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.pista_action_window">
+      <field name="name">Pista</field>
+      <field name="res_model">serco_karting.pista</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.proveedor_action_windows">
+      <field name="name">Proveedor</field>
+      <field name="res_model">serco_karting.proveedor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.tiempo_carreras_action_windows">
+      <field name="name">Tiempo de las carreras</field>
+      <field name="res_model">serco_karting.tiempo_carreras</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.bar_action_windows">
+      <field name="name">Bar</field>
+      <field name="res_model">serco_karting.bar</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.productos_bar_action_windows">
+      <field name="name">Productos del bar</field>
+      <field name="res_model">serco_karting.productos_bar</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.competiciones_action_windows">
+      <field name="name">Competiciones</field>
+      <field name="res_model">serco_karting.competiciones</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.clientes_action_windows">
+      <field name="name">Clientes</field>
+      <field name="res_model">serco_karting.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="serco_karting.premios_action_windows">
+      <field name="name">Premios</field>
+      <field name="res_model">serco_karting.premios</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- MENUS  -->
+
+    <menuitem name="Karting" id="serco_karting.menu_root"/>
+
+
+
+    <menuitem name="Gestión de empleados" id="serco_karting.menu_1" parent="serco_karting.menu_root"/>
+    <menuitem name="Listado de empleados" id="serco_karting.menu_1_list" parent="serco_karting.menu_1"
+              action="serco_karting.empleado_action_window"/>
+    <menuitem name="Puestos de trabajo" id="serco_karting.menu_2_list" parent="serco_karting.menu_1"
+              action="serco_karting.puesto_action_window"/>
+
+
+    <menuitem name="Gestion de vehiculos" id = "serco_karting.menu_2" parent="serco_karting.menu_root"/>
+    <menuitem name ="Listado de vehiculos" id = "serco_karting.menu_3_list" parent="serco_karting.menu_2"
+              action="serco_karting.vehiculos_action_window"/>
+    <menuitem name="Estados" id = "serco_karting.menu_4_list" parent="serco_karting.menu_2"
+              action="serco_karting.estados_action_window"/>
+    <menuitem name="Piezas" id="serco_karting.menu_5_list" parent="serco_karting.menu_2"
+              action="serco_karting.piezas_action_window"/>
+
+    <menuitem name = "Gestion de pista" id = "serco_karting.menu_3" parent="serco_karting.menu_root"/>
+    <menuitem name = "Pista" id ="serco_karting.menu_6_list" parent="serco_karting.menu_3"
+              action="serco_karting.pista_action_window"/>
+    <menuitem name = "Tiempos" id = "serco_karting.menu_8_list" parent="serco_karting.menu_3"
+              action="serco_karting.tiempo_carreras_action_windows"/>
+
+    <menuitem name = "Gestion de proveedores" id = "serco_karting.menu_4" parent="serco_karting.menu_root"/>
+    <menuitem name = "Proveedores" id="serco_karting.menu_7_list" parent="serco_karting.menu_4"
+              action="serco_karting.proveedor_action_windows"/>
+
+    <menuitem name = "Gestion del Bar" id = "serco_karting.menu_5" parent="serco_karting.menu_root"/>
+    <menuitem name = "Bar" id="serco_karting.menu_9_list" parent="serco_karting.menu_5"
+              action="serco_karting.bar_action_windows"/>
+    <menuitem name = "Productos del bar" id = "serco_karting.menu_10_list" parent="serco_karting.menu_5"
+              action="serco_karting.productos_bar_action_windows"/>
+
+    <menuitem name = "Gestion de Clientes" id = "serco_karting.menu_6" parent="serco_karting.menu_root"/>
+    <menuitem name = "Competiciones" id = "serco_karting.menu_11_list" parent="serco_karting.menu_6"
+              action="serco_karting.competiciones_action_windows"/>
+    <menuitem name = "Clientes" id = "serco_karting.menu_12_list" parent="serco_karting.menu_6"
+              action="serco_karting.clientes_action_windows"/>
+    <menuitem name = "Premios" id = "serco_karting.menu_13_list" parent="serco_karting.menu_6"
+              action="serco_karting.premios_action_windows"/>
+  </data>
+</odoo>

@@ -1,0 +1,182 @@
+<odoo>
+    <data>
+        <!--  -->
+        <!--   <record id="object0" model="serco_karting.serco_karting"> -->
+        <!--     <field name="name">Object 0</field> -->
+        <!--     <field name="value">0</field> -->
+        <!--   </record> -->
+        <record id="puesto1" model="serco_karting.puesto">
+          <field name="name">Mecanico</field>
+          <field name="descripcion">Se ecarga del manetenimiento de los vehiculos</field>
+        </record>
+        <record id="puesto2" model="serco_karting.puesto">
+          <field name="name">Encargado de la pista</field>
+          <field name="descripcion">Encargado de tener la pista lista para su uso</field>
+        </record>
+        <record id="puesto3" model="serco_karting.puesto">
+          <field name="name">Camarero</field>
+          <field name="descripcion">Camerero del bar</field>
+        </record>
+        <record id="puesto4" model="serco_karting.puesto">
+          <field name="name">Jefe</field>
+          <field name="descripcion">Jefe de la empresa</field>
+        </record>
+        <record id="empleado1" model="serco_karting.empleado">
+          <field name="name">12365498P</field>
+          <field name="nombre">Sergio</field>
+          <field name="apellidos">Lopez Fernandez</field>
+          <field name="edad">28</field>
+          <field name="puesto" ref="puesto1"/>
+        </record>
+        <record id="empleado2" model="serco_karting.empleado">
+          <field name="name">54896324D</field>
+          <field name="nombre">Manolo</field>
+          <field name="apellidos">Lama</field>
+          <field name="edad">45</field>
+          <field name="puesto" ref="puesto2"/>
+        </record>
+        <record id="empleado3" model="serco_karting.empleado">
+          <field name="name">48962587S</field>
+          <field name="nombre">Fernando</field>
+          <field name="apellidos">Jimenez Echenique</field>
+          <field name="edad">25</field>
+          <field name="puesto" ref="puesto3"/>
+        </record>
+        <record id="empleado4" model="serco_karting.empleado">
+          <field name="name">25974185F</field>
+          <field name="nombre">Juan</field>
+          <field name="apellidos">Garcia paton</field>
+          <field name="edad">35</field>
+          <field name="puesto" ref="puesto4"/>
+        </record>
+        <record id="estado1" model="serco_karting.estados">
+          <field name="identificador">0001</field>
+          <field name="name">Gastado</field>
+        </record>
+        <record id="estado2" model="serco_karting.estados">
+          <field name="identificador">0002</field>
+          <field name="name">Normal</field>
+        </record>
+        <record id="estado3" model="serco_karting.estados">
+          <field name="identificador">0003</field>
+          <field name="name">Nuevo</field>
+        </record>
+        <record id="estado4" model="serco_karting.estados">
+          <field name="identificador">0004</field>
+          <field name="name">Seminuevo</field>
+        </record>
+        <record id="estado5" model="serco_karting.estados">
+          <field name="identificador">0005</field>
+          <field name="name">Nivel bajo</field>
+        </record>
+        <record id="estado6" model="serco_karting.estados">
+          <field name="identificador">0006</field>
+          <field name="name">Nivel medio</field>
+        </record>
+        <record id="estado7" model="serco_karting.estados">
+          <field name="identificador">0007</field>
+          <field name="name">Nivel alto</field>
+        </record>
+        <record id="estado8" model="serco_karting.estados">
+          <field name="identificador">0008</field>
+          <field name="name">Bien</field>
+        </record>
+        <record id="estado9" model="serco_karting.estados">
+          <field name="identificador">0009</field>
+          <field name="name">Mal</field>
+        </record>
+        <record id="vehiculo1" model="serco_karting.vehiculos">
+          <field name="identificador">1</field>
+          <field name="modelo">Alevin</field>
+          <field name="ruedas" ref="estado2"/>
+          <field name="gasolina" ref="estado7"/>
+          <field name="aceite" ref="estado6"/>
+          <field name="empleado" ref="empleado1"/>
+        </record>
+        <record id="vehiculo2" model="serco_karting.vehiculos">
+          <field name="identificador">2</field>
+          <field name="modelo">Cadete</field>
+          <field name="ruedas" ref="estado4"/>
+          <field name="gasolina" ref="estado5"/>
+          <field name="aceite" ref="estado5"/>
+          <field name="empleado" ref="empleado1"/>
+        </record>
+        <record id="vehiculo3" model="serco_karting.vehiculos">
+          <field name="identificador">3</field>
+          <field name="modelo">junior</field>
+          <field name="ruedas" ref="estado1"/>
+          <field name="gasolina" ref="estado6"/>
+          <field name="aceite" ref="estado7"/>
+          <field name="empleado" ref="empleado1"/>
+        </record>
+        <record id="pista1" model="serco_karting.pista">
+          <field name="empleado" ref="empleado2"/>
+          <field name="fecha">28-02-2019</field>
+          <field name="estado" ref="estado8"/>
+          <field name="descripcion">La pista no tenia nada que arreglar</field>
+        </record>
+        <record id="pista2" model="serco_karting.pista">
+          <field name="empleado" ref="empleado2"/>
+          <field name="fecha">27-02-2019</field>
+          <field name="estado" ref="estado9"/>
+          <field name="descripcion">La pista tenia un piano levantado le cual ha sido reparado</field>
+        </record>
+
+        <record id="proveedor1" model="serco_karting.proveedor">
+          <field name="name">Pirelli</field>
+          <field name="identificador">1</field>
+          <field name="email">pirelli@pirelli.com</field>
+          <field name="direccion">Italia</field>
+          <field name="fax">857263415</field>
+        </record>
+
+        <record id="proveedor2" model="serco_karting.proveedor">
+          <field name="name">CocaCola</field>
+          <field name="identificador">2</field>
+          <field name="email">coca@Cola.com</field>
+          <field name="direccion">Alemania</field>
+          <field name="fax">356983415</field>
+        </record>
+
+        <record id="pieza1" model="serco_karting.piezas">
+          <field name="name">Ruedas</field>
+          <field name="identificador">1</field>
+          <field name="estado" ref="estado4"/>
+          <field name="cantidad">10</field>
+          <field name="proveedor" ref="proveedor1"/>
+        </record>
+
+        <record id="cliente1" model="serco_karting.clientes">
+          <field name="identificador">1</field>
+          <field name="nombre">Samuel</field>
+          <field name="telefono">764567891</field>
+          <field name="email">samuel@samuel.es</field>
+        </record>
+
+        <record id="premio1" model="serco_karting.premios">
+          <field name="name">Copa de oro</field>
+          <field name="descripcion">Pequeña copa de oro</field>
+        </record>
+
+        <record id="cliente2" model="serco_karting.clientes">
+          <field name="identificador">2</field>
+          <field name="nombre">Nathan</field>
+          <field name="telefono">789176456</field>
+          <field name="email">nathan@nathan.es</field>
+        </record>
+
+
+        <record id="bar1" model="serco_karting.bar">
+          <field name="empleado" ref="empleado3"/>
+          <field name="fecha">28-02-2018</field>
+          <field name ="productosBar">Ninguno</field>
+        </record>
+
+        <record id="productobar1" model="serco_karting.productos_bar">
+          <field name="name">0001</field>
+          <field name="nombre">Coca-Cola</field>
+          <field name ="precio">10€</field>
+          <field name="proveedor" ref="proveedor2"/>
+        </record>
+    </data>
+</odoo>
